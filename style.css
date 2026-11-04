@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Open+Sans:wght@400;600;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: white;
+    color: #222;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    padding: 0 max(20px, calc((100% - 1250px) / 2));
+    background: white;
+}
+
+.navbar .left {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 2.75rem;
+    color: black;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar a {
+    display: block;
+    padding: 10px 25px;
+    font-size: 1.6rem;
+    color: #222;
+    text-decoration: none;
+}
+
+.navbar a:hover,
+.navbar li:first-child a {
+    background: #fdf5e6;
+}
+
+.navbar li:first-child a {
+    font-weight: 600;
+}
+
+.hero,
+.navbar + div {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 250px 20px 180px;
+    text-align: center;
+}
+
+.hero h1,
+.navbar + div h1 {
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.gallery,
+.navbar + div + div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 50px;
+}
+
+.gallery img,
+.navbar + div + div img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    margin-top: 60px;
+    padding: 60px 80px;
+    border-top: 1px solid #ccc;
+    background: white;
+    color: #111;
+    text-align: left;
+}
+
+.footer .left {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: center;
+    justify-self: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 2.5rem;
+}
+
+.footer h5 {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0 0 15px;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.footer p {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: #111;
+}
+
+.font {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+
+.font::before {
+    content: "Follow Us";
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.font ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    font-size: 2.8rem;
+}
+
+.font li:empty {
+    display: none;
+}
+
+.font i:hover {
+    color: #e67e22;
+}
+
+@media (max-width: 992px) {
+    .hero,
+    .navbar + div {
+        padding: 120px 20px 100px;
+    }
+
+    .hero h1,
+    .navbar + div h1 {
+        font-size: 3rem;
+    }
+
+    .gallery,
+    .navbar + div + div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+        padding: 40px 30px;
+        text-align: center;
+    }
+
+    .footer .left,
+    .footer h5,
+    .footer p,
+    .font {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .font ul {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        height: 90px;
+    }
+
+    .navbar .left {
+        font-size: 1.8rem;
+    }
+
+    .navbar a {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+
+    .hero h1,
+    .navbar + div h1 {
+        font-size: 2rem;
+    }
+
+    .gallery,
+    .navbar + div + div {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+}
